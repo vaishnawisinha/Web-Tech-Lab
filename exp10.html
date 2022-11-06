@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+ <title>Megaplay Registration</title>
+</head>
+<body>
+
+     <h1>Megaplay'22 Registration Form</h1><br><br><br>
+     <form action="/form" method="post">
+           <label for="name">Name: </label>
+           <input type="text" name="name" id="name">
+         
+      <br>
+       
+           <label for="reg">RegNo: </label>
+           <input type="text" name="reg" id="reg">
+         <br>
+     
+           <label for="year">Year of Study: </label>
+           <input type="text" name="year" id="year">
+        <br>
+    
+           <label for="dept">Department: </label>
+           <select name="dept">
+             <option value="CSE">CSE</option>
+             <option value="ECE">ECE</option>
+             <option value="EEE">EEE</option>
+             <option value="Media">Media</option>
+             <option value="Mechanical">Mechanical</option>
+             <option value="Agriculture">Agriculture</option>
+           </select>
+         <br>
+           <label for="school">School: </label>
+           <select name="school">
+             <option value="School of Engineering">School of Engineering</option>
+             <option value="School of Agriculture and Biosciences">School of Agriculture and Biosciences</option>
+             <option value="School of Management Studies">School of Management Studies</option>
+           </select>
+         <br>
+
+           <label for="event">Type of Event: </label>
+           <input type="checkbox" name="event" value="Musician"> Musician
+           <input type="checkbox" name="event" value="Singing"> Singing
+           <input type="checkbox" name="event" value="Choreography"> Choreography
+           <input type="checkbox" name="event" value="Backstage"> Backstage
+           <input type="checkbox" name="event" value="Finance"> Finance
+           <input type="checkbox" name="event" value="Purchase"> Purchase
+           <input type="checkbox" name="event" value="Volunteer"> Volunteer
+        <br>
+           <button type="submit">Submit</button>
+         <br>
+     </form>
+
+    
+
+<br><br>
+</body>
+</html>
