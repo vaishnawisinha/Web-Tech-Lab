@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      var t;
+var c;
+var pos = 0;
+function init() {
+    t = setInterval('moveCar()', 100);
+}
+function initl() {
+    c = setInterval('moveCarl()', 100);
+}
+
+function moveCar() {
+    var car = document.getElementById('car');
+    pos += 10;
+    car.style.left = pos + 'px';
+}
+function moveCarl() {
+
+    var car = document.getElementById('car');
+    pos -= 10;
+    if (pos >= 0) {
+        car.style.left = pos + 'px';
+    }
+    else {
+        pos = 0;
+        return;
+    }
+}
+function stopCar() {
+    clearTimeout(t);
+    clearTimeout(c);
+    car.style.left = pos + 'px';
+    car.style.right = pos + 'px';
+}
+function resetcar() {
+    clearTimeout(t);
+    clearTimeout(c);
+    pos = 0
+    car.style.left = pos + 'px';
+}
+
+
+    </script>
+</head>
+<body>
+    
+    <h2>Car !?</h2>
+
+
+<img id="car" src="car.jpg" width="150" height="100"
+    style="position: relative; right: 0px; left: 0px; top: 0px;"></img>
+    
+<input type="button" value="Reverse" onclick="init()" style="position: relative; top:30px;" />
+<input type="button" value="Stop" onclick="stopCar()" style="position: relative; top:30px;" />
+<input type="button" value="Reset" onclick="resetcar()" style="position: relative; top:30px;" />
+<br><br><br>
+
+
+</body>
+</html>
