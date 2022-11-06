@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="exp5.js"></script>
+    <style>
+      #container {
+        position: relative;
+        top: 30px;
+        outline: 2px solid #000;
+        font-size: 0;
+        margin: auto;
+        height: 960px;
+        width: 960px;
+        padding: 0;
+        border: none;
+      }
+
+      .grid {
+        margin: 0;
+        padding: 0;
+        border: 1px solid black;
+        outline: 1px solid #000;
+        display: inline-block;
+      }
+    </style>
+  </head>
+
+  <body style="margin: 0">
+    <!-- Question 1 -->
+    <div
+      style="
+        padding: 3.5%;
+        border: 2px solid black;
+        width: fit-content;
+        margin: 2%;
+      "
+    >
+      <h1>Longest and Shortest Words</h1>
+      <form>
+        <input
+          class="border-2 border-black"
+          type="text"
+          name="inputbox"
+          id="myid"
+        />
+        <input
+          type="button"
+          value="Submit"
+          onclick="myfunction(document.getElementById('myid').value)"
+        />
+        <input type="reset" value="Reset" />
+      </form>
+      <br />
+      <div id="short" on></div>
+      <div id="long"></div>
+    </div>
+    <!-- Question 2 -->
+    <div
+      style="
+        margin: 2%;
+        padding: 2%;
+        border: 2px solid black;
+        width: fit-content;
+      "
+    >
+      <h2 style="padding: 1%">Calculate your BMI !</h2>
+      <div>
+        Weight (in kilograms): <input type="text" id="weight" size="10" />
+      </div>
+      <br />
+      <div>
+        Height(in meters):
+        <input type="text" id="height" size="10" style="margin-left: 12%" />
+      </div>
+      <br />
+      <button style="padding: 2%" onclick="calculate()">Get BMI !</button>
+      <p style="font-size: larger">
+        Your BMI is <span id="score" style="color: brown"></span> <br />
+        Your body type is <span style="color: darkblue" id="type"></span>
+      </p>
+    </div>
+    <!-- Question 3 -->
+    <div
+      style="
+        margin: 2%;
+        padding: 2%;
+        border: 2px solid black;
+        width: fit-content;
+      "
+    >
+      Rows: <input id="row" type="text" />
+      <br />
+      Columns: <input id="column" type="text" /><br />
+      <button onclick="grow()">Grow!</button>
+      <br />
+      <br />
+      Fruit Farm: <br />
+      <div id="garden"></div>
+    </div>
+    <!-- Question 4 -->
+    <div
+      style="
+        margin: 2%;
+        padding: 2%;
+        border: 2px solid black;
+        width: fit-content;
+      "
+    >
+      <h3>Currency Converter</h3>
+      <div id="value">
+        <h2>0</h2>
+      </div>
+      <input type="number" name="" id="inputvalue" />
+      <br /><br />
+      From :
+      <select name="" id="from">
+        <option value="Rupee">Indian Rupee</option>
+        <option value="USD">US Dollar</option>
+      </select>
+      <br /><br />
+      <div style="margin-left: 9%">
+        To :
+        <select name="" id="to">
+          <option value="USD">US Dollar</option>
+          <option value="Rupee">Indian Rupee</option>
+        </select>
+      </div>
+      <br />
+      <button type="submit" onclick="convert()">Submit</button>
+      <button type="reset" onclick="location.reload(true)">Reset</button>
+    </div>
+    <!-- Question 5 -->
+    <div
+      style="
+        margin: 2%;
+        padding: 2%;
+        border: 2px solid black;
+        width: fit-content;
+      "
+    >
+      <img
+        id="coin"
+        src="https://www.pngitem.com/pimgs/m/391-3913308_2-finger-rupee-indian-2-rs-coin-hd.png"
+        alt=""
+        width="100"
+        height="100"
+      />
+      <div>
+        <button onclick="flip()">Flip</button>
+        <button onclick="reset()">Reset</button> <br />
+        <br />
+      </div>
+      Tail Count: <span id="tc">0</span><br />
+      Head Count: <span id="hc">0</span><br /><br />
+    </div>
+    <!-- Question 6 -->
+
+    <div
+      style="
+        margin: 2%;
+        padding: 2%;
+        border: 2px solid black;
+        width: fit-content;
+      "
+    >
+      <h2>World Cake Order!</h2>
+      <form action="" id="order" onsubmit="TotalBill();return false">
+        Order(0.5 or integers):
+        <input type="text" id="cakeweight" required /> Kg of
+        <select name="Cakes" id="cake">
+          <option value="True">Choose your delicacies..</option>
+          <option value="Choco Truffle">Choco Truffle</option>
+          <option value="Red Velvet">Red Velvet</option>
+          <option value="Pinneaple">Pinneaple</option>
+        </select>
+        <span id="invalid"></span><br />
+        Tip(10=>20)
+        <input type="range" id="tip" min="10" max="20" step="1" value="10" />
+        <span>% of total bill</span><br /><br />
+        <button type="submit">Place Order</button>
+        <button type="reset">Reset</button>
+      </form>
+      Bill Split:
+      <div id="bill"></div>
+    </div>
+  </body>
+</html>
