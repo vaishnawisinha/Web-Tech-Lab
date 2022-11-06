@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>AngularJS Form Validation</title>
+	<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+	</script>
+	<style>
+		span{
+			color: red;
+		}
+	</style>
+	<script>
+		var app = angular.module("myApp", []);
+	app.controller("formCtrl", ['$scope', function($scope) {
+			$scope.ph_numbr = /^\+?\d{10}$/; }]);
+	</script>
+</head>
+
+<body ng-app="myApp">
+	<div class="form-area" ng-controller="formCtrl">
+	<h3>AngularJS Form Validation</h3>
+	<form name="form1" action="qus1.html">
+		<p>Name:
+			<input name="username" ng-model="username" required>
+			<span ng-show= "form1.username.$dirty && form1.username.$invalid">
+				The name is required.</span>
+		</p>
+		<p>Registration Number:
+			<input name="useraddress" ng-model="useraddress" required>
+				<span ng-show= "form1.useraddress.$dirty && form1.useraddress.$invalid">
+					The name is required.</span>
+		</p>
+		<p>
+			KMail:
+			<input type="email" name="email" required>
+			<span ng-show="form1.email.$dirty && form1.email.$invalid">
+			<span ng-show="form1.email.$error.required"> KMail is required</span>
+			<span ng-show="form1.email.$error.email">Invalid Email</span>
+		</span>
+		</p>
+		<p>
+			Phone Number:
+			<input type="tel" name="phno" ng-model="phno" ng-pattern="ph_numbr" class="formCtrl" required>
+			<span ng-show="form1.phno.$dirty && form1.phno.$invalid">
+			<span ng-show="form1.phno.$error.required"> Phone Number is required</span>
+			<span ng-show="form1.phno.$error.pattern">Please enter a 10 digit number</span>
+            
+			<!-- <span ng-show="form1.phno.$invalid">Invalid Number</span> -->
+			</span>
+		</p>
+		Events <select name="opt" ng-model="opt" required>
+			<option value="SI">Singing</option>
+			<option value="DN">Dancing</option>
+			<option value="AC">Acting</option>
+			<option value="MC">MC</option>
+			<option value="EM">Event Management</option>
+
+		
+		<span ng-show="form1.phno.$dirty && form1.opt.$invalid">Please select an event</span>
+	</select><p>
+			<button type="submit"
+			ng-disabled=" form1.username.$invalid || form1.useraddress.$invalid ||
+		   form1.email.$invalid ||  form1.phno.$invalid
+			||  form1.opt.$invalid" onclick="">Submit</button>
+		  </p>
+	</form>
+</div>
+</body>
+
+</html>

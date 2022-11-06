@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<body ng-app="myApp">
+
+
+
+<a href="#!red">URK20CS2024</a>
+<a href="#!green">URK20CS2025</a>
+<a href="#!blue">URK20CS2026</a>
+<a href="#!yellow">URK20CS2027</a>
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    
+    .when("/red", {
+        templateUrl : "1.html"
+    })
+    .when("/green", {
+        templateUrl : "2.html"
+    })
+    .when("/blue", {
+        templateUrl : "3.html"
+    })
+    .when("/yellow", {
+        templateUrl : "4.html"
+    });
+});
+</script>
+
+<p>Click on the links to navigate to "red.htm", "green.htm", "blue.htm", or back to "main.htm"</p>
+</body>
+</html>
